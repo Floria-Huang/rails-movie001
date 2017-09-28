@@ -26,10 +26,11 @@ end
 
 def update
   @movie = Movie.find(params[:id])
-
-  @movie.update(movie_params)
-
+if @movie.update(movie_params)
   redirect_to movie_path, notice: "Update Success!"
+else
+  render :edit
+end
 end
 
 def destroy
