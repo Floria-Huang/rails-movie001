@@ -7,4 +7,24 @@
   </div>
   <h2><%= @movie.title %></h2>
   <p><%= @movie.description %></p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>影评内容</th>
+      <th>发表者</th>
+      <th>发表时间</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @critics.each do |critic| %>
+    <tr>
+      <td><%= critic.content %></td>
+      <td><%= critic.user.email %></td>
+      <td><%= critic.created_at %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
 </div>
